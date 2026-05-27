@@ -1,0 +1,20 @@
+package com.agrigov.dto;
+
+import java.time.LocalDateTime;
+
+import com.agrigov.enums.NotificationCategory;
+import com.agrigov.enums.NotificationStatus;
+
+import lombok.Data;
+
+@Data
+public class NotificationResponse {
+
+    private Long notificationId;
+    private Long farmerId;
+    private Long entityId;
+    private String message;
+    private NotificationCategory category;
+    private NotificationStatus status;
+    private LocalDateTime createdDate;
+}
