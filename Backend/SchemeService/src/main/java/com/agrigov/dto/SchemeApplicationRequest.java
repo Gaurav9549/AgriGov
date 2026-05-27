@@ -1,0 +1,30 @@
+package com.agrigov.dto;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+
+import com.agrigov.enums.SchemeStatus;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class SchemeApplicationRequest {
+	//List of fields getting in request.
+    @NotNull
+    private Long farmerID;
+
+    @NotNull
+    private Long schemeID;
+
+    // If null, service layer can default to LocalDate.now()
+    private LocalDate submittedDate;
+
+    @NotNull
+    private SchemeStatus status;
+}
